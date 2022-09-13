@@ -25,9 +25,10 @@ function SignUp() {
                     <option value="Developer">Developer</option>
                     <option value="Owner">Owner</option>
                 </select>
-
-                <button>Sign up</button>  
+                <br />
+                <button>Sign up</button>
             </form>
+            <p>Have an account? Sign in</p>
         </div>
     )
 }
