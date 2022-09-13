@@ -1,12 +1,14 @@
 .App {
   margin: 1rem;
-  width: 900px;
+  width: 600px;
   margin: 0 auto;
-  text-align: center;
+  background-color: white;
 }
 .logo {
   font-size: 40px;
   font-weight: 300;
+  color: #015958;
+  text-align: center;
 }
 
 .App-logo {
