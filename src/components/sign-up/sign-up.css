@@ -1,0 +1,50 @@
+.sign-up-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-up-header h1 {
+    margin: 0;
+}
+
+
+
+.form-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-field input {
+    padding: 0.6rem;
+    outline: none;
+}
+
+#options {
+    padding: 0.5rem;
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+button {
+    width: 600px;
+    border: none;
+    padding: 1rem;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #015958;
+    color: white;
+    text-transform: uppercase;
+    transition: 300ms ease;
+}
+
+button:hover {
+    background-color: #015958;
+    background-color: transparent;
+    color: #015958;
+    border: 2px solid #015958;
+}
