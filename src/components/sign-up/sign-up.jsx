@@ -4,8 +4,10 @@ import './sign-up.css'
 function SignUp() {
     return (
         <div className='sign-up'>
-            <h1>Don't have an account?</h1>
-            <h3>Sign up here!</h3>
+            <div className="sign-up-header">
+                <h1>Don't have an account?</h1>
+                <h3>Sign up here!</h3>
+            </div>
             <form className='form'>
                 <div className="form-field">
                     <label for='text'>Full name</label>
