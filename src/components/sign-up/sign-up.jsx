@@ -18,7 +18,7 @@ function SignUp() {
                 {content.inputs.map((input, key) => (
                     <div className="form-field" key={key}>
                         <label htmlFor={input.name}>{input.label}</label>
-                        <input type={input.type} name={input.name} />
+                        <input type={input.type} name={input.name} ref={register} />
                     </div>
                 ))}
                 <label htmlFor='options'>User type</label>
