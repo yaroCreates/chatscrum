@@ -21,6 +21,8 @@ function SignUp() {
                     <label for='password'>Password</label>
                     <input name='password' type='password' />
                 </div>
+                <label htmlFor='options'>User type</label>
+                <br/>
                 <select id="options">
                     <option value="Developer">Developer</option>
                     <option value="Owner">Owner</option>
