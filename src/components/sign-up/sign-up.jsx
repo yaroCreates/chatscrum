@@ -1,8 +1,13 @@
 import React from 'react'
 import './sign-up.css'
 import content from '../../static/index'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers'
+import * as yup from 'yup'
 
 function SignUp() {
+
+    const {register, handleSubmit, errors} = useForm()
     return (
         <div className='sign-up'>
             <div className="sign-up-header">
@@ -17,7 +22,7 @@ function SignUp() {
                     </div>
                 ))}
                 <label htmlFor='options'>User type</label>
-                <br/>
+                <br />
                 <select id="options">
                     <option value="Developer">Developer</option>
                     <option value="Owner">Owner</option>
