@@ -10,18 +10,12 @@ function SignUp() {
                 <h3>Sign up here!</h3>
             </div>
             <form className='form'>
-                <div className="form-field">
-                    <label for='text'>Full name</label>
-                    <input name='text' type='text' />
-                </div>
-                <div className="form-field">
-                    <label for='email'>Email</label>
-                    <input name='email' type='email' />
-                </div>
-                <div className="form-field">
-                    <label for='password'>Password</label>
-                    <input name='password' type='password' />
-                </div>
+                {content.inputs.map((input, key) => (
+                    <div className="form-field" key={key}>
+                        <label htmlFor={input.name}>{input.label}</label>
+                        <input type={input.type} name={input.name} />
+                    </div>
+                ))}
                 <label htmlFor='options'>User type</label>
                 <br/>
                 <select id="options">
