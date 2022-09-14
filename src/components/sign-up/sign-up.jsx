@@ -7,18 +7,21 @@ import * as yup from 'yup'
 
 function SignUp() {
 
-    const {register, handleSubmit, errors} = useForm()
+    const {register, handleSubmit, formState: {errors}} = useForm()
+
+    const onSubmit = (data) => {console.log(data)}
     return (
         <div className='sign-up'>
             <div className="sign-up-header">
                 <h1>Don't have an account?</h1>
                 <h3>Sign up here!</h3>
             </div>
-            <form className='form'>
+            <form className='form' onSubmit={handleSubmit(onSubmit)}>
                 {content.inputs.map((input, key) => (
                     <div className="form-field" key={key}>
                         <label htmlFor={input.name}>{input.label}</label>
-                        <input type={input.type} name={input.name} ref={register} />
+                        <input type={input.type} name={input.name} {...register(input.name)} />
+                        <span className="message">{errors[input.name]?.message}</span>
                     </div>
                 ))}
                 <label htmlFor='options'>User type</label>
