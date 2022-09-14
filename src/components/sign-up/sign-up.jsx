@@ -1,5 +1,6 @@
 import React from 'react'
 import './sign-up.css'
+import content from '../../static/index'
 
 function SignUp() {
     return (

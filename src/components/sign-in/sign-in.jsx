@@ -1,5 +1,6 @@
 import React from 'react'
 import './sign-in.css'
+import content from '../../static/index'
 
 function SignIn() {
     return (
