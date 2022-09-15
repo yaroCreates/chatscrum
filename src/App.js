@@ -10,6 +10,8 @@ class App extends React.Component {
       <div className="App">
         <h1 className='logo'>Chatscrum</h1>
         <SignUp />
+        <SignIn/>
+        <Home />
       </div>
     )
   }
