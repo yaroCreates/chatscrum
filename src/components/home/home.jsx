@@ -8,7 +8,7 @@ export default function Home() {
       <h1>Welcome to <span>Chatscrum</span></h1>
       <div className="links">
         <h4><Link to='/signin'>Sign in</Link></h4>
-        <h4><Link to='/signup'>Sigup</Link></h4>
+        <h4><Link to='/signup'>Sign up</Link></h4>
       </div>
     </div>
   )
