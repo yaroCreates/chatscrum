@@ -1,0 +1,24 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.links h4 {
+    margin: 1rem;
+}
+
+.links h4:hover {
+    color: #015958;
+}
+
+span {
+    color: #015958;
+}
