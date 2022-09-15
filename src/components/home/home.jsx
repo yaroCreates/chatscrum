@@ -7,8 +7,8 @@ export default function Home() {
     <div className='home'>
       <h1>Welcome to Chatscrum</h1>
       <div className="links">
-        <h4><Link to='/signin'>Sign in</Link></h4>
-        <h4><Link to='/signup'>Sign up</Link></h4>
+        <h4><Link className="link-tag" to='/signin'>Sign in</Link></h4>
+        <h4><Link className="link-tag" to='/signup'>Sign up</Link></h4>
       </div>
     </div>
   )
