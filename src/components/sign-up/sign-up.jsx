@@ -2,14 +2,29 @@ import React from 'react'
 import './sign-up.css'
 import content from '../../static/index'
 import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers'
+import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
 function SignUp() {
 
-    const {register, handleSubmit, formState: {errors}} = useForm()
+    const schema = yup.object().shape(
+        {
+            fullname: yup.string().required("Please enter full name").min(6),
+            email: yup.string().required("Please enter a valid email"),
+            password: yup.string().required("Please enter password").matches(
+                /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/,
+                "Must contain 8 characters, One Uppercase, One Lowercase, a number and a special character"
+            )
+        }
+    )
 
-    const onSubmit = (data) => {console.log(data)}
+    const { register, handleSubmit, formState: { errors } } = useForm(
+        {
+            resolver: yupResolver(schema)
+        }
+    )
+
+    const onSubmit = (data) => { console.log(data) }
     return (
         <div className='sign-up'>
             <div className="sign-up-header">
