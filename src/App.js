@@ -13,9 +13,9 @@ class App extends React.Component {
         <div className="App">
           <h1 className='logo'>Chatscrum</h1>
           <Routes>
-            <Route exact path='/' component={Home} />
-            <Route path='/signin' component={SignIn} />
-            <Route path='/signup' component={SignUp} />
+            <Route exact path='/' element={<Home />} />
+            <Route path='/signin' element={<SignIn />} />
+            <Route path='/signup' element={<SignUp />} />
           </Routes>
         </div>
 
