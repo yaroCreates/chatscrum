@@ -49,7 +49,8 @@ function SignUp() {
                 <br />
                 <button>Sign up</button>
             </form>
-            <p>Have an account? Sign in</p>
+            <p>Have an account? <Link to='/signin'>Sign in</Link></p>
+            <p><Link to='/'>Return home</Link></p>
         </div>
     )
 }

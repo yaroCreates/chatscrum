@@ -1,6 +1,6 @@
 import React from 'react'
 import './sign-in.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import content from '../../static/index'
 
 function SignIn() {
@@ -30,7 +30,8 @@ function SignIn() {
                     <br />
                     <button>Sign in</button>
                 </form>
-                <p>Don't have an account? Sign up</p>
+                <p>Don't have an account? <Link to='/signup'>Sign up</Link></p>
+                <p><Link to='/'>Return home</Link></p>
             </div>
         </div>
     )
