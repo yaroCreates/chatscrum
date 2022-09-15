@@ -19,3 +19,14 @@
     color: #015958;
 }
 
+.link-tag {
+    text-decoration: none;
+    color: black;
+    transition: 0.1s ease;
+}
+.link-tag:hover {
+    color: white;
+    background-color: #015958;
+    padding: 1rem;
+    border-radius: 5px;
+}
