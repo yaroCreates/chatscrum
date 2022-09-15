@@ -1,5 +1,6 @@
 import React from 'react'
 import './sign-up.css'
+import {Link} from 'react-router-dom'
 import content from '../../static/index'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
