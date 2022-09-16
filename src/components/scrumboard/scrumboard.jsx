@@ -20,6 +20,16 @@ export class Scrumboard extends Component {
         </nav>
 
         <p id="info">Hello {data.fullname}! Welcome to your scrumboard</p>
+
+        <div className="container">
+            <div className="weekly-box">
+                <h3>Weekly task</h3>
+            </div>
+            <div className="daily-box">
+                <h3>Daily target</h3>
+            </div>
+        </div>
+        <button className="add">Add task</button>
       </div>
     )
   }

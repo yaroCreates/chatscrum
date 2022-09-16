@@ -11,3 +11,48 @@ nav {
 nav p {
     margin: 0;
 }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.daily-box {
+    height: 300px;
+    width: 220px;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: center;
+}
+
+.daily-box h3 {
+    margin: 0;
+    text-align: center;
+    padding-top: 10px;
+    border-bottom: 1px solid gray;
+    height: 50px;
+    width: 100%;
+}
+.weekly-box {
+    height: 300px;
+    width: 220px;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: center;
+}
+
+.weekly-box h3 {
+    margin: 0;
+    text-align: center;
+    padding-top: 10px;
+    border-bottom: 1px solid gray;
+    height: 50px;
+    width: 100%;
+}
+
+.add {
+    margin-top: 1rem;
+    width: 200px;
+    border-radius: 50px;
+}
