@@ -4,6 +4,26 @@ import data from '../../static/Data'
 
 export class Scrumboard extends Component {
 
+    constructor() {
+        super()
+
+        this.state = {
+            Data: data,
+            isOpen: false
+        }
+    }
+
+    openModel = () => {
+        this.setState({
+            isOpen: true
+        })
+    }
+    closeModel = () => {
+        this.setState({
+            isOpen: false
+        })
+    }
+
     state = data
     
   render() {
@@ -29,7 +49,19 @@ export class Scrumboard extends Component {
                 <h3>Daily target</h3>
             </div>
         </div>
-        <button className="add">Add task</button>
+
+        <div id="modal" className={this.state.isOpen ? "show" : "hidden"}>
+            <div className="header">
+                <h3>Add new task</h3>
+                <h4 className='close'onClick={() => this.closeModel()}>X</h4>
+            </div>
+
+            <form>
+                <input className='modal-field' type='text'/>
+                <button className='modal-button'>Confirm</button>
+            </form>
+        </div>
+        <button className="add" onClick={() => this.openModel()}>Add task</button>
       </div>
     )
   }
