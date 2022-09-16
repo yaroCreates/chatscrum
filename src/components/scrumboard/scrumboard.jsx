@@ -9,7 +9,8 @@ export class Scrumboard extends Component {
 
         this.state = {
             Data: data,
-            isOpen: false
+            isOpen: false,
+            tasks: null
         }
     }
 
@@ -19,6 +20,18 @@ export class Scrumboard extends Component {
         })
     }
     closeModel = () => {
+        this.setState({
+            isOpen: false
+        })
+    }
+    handleChange = (e) => {
+        this.setState({
+            tasks: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
         this.setState({
             isOpen: false
         })
@@ -44,6 +57,7 @@ export class Scrumboard extends Component {
         <div className="container">
             <div className="weekly-box">
                 <h3>Weekly task</h3>
+                <p id="box">{this.state.tasks}</p>
             </div>
             <div className="daily-box">
                 <h3>Daily target</h3>
@@ -56,8 +70,8 @@ export class Scrumboard extends Component {
                 <h4 className='close'onClick={() => this.closeModel()}>X</h4>
             </div>
 
-            <form>
-                <input className='modal-field' type='text'/>
+            <form onSubmit={this.handleSubmit}>
+                <input className='modal-field' type='text'onChange={this.handleChange}/>
                 <button className='modal-button'>Confirm</button>
             </form>
         </div>
