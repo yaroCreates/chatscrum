@@ -14,6 +14,11 @@ const content = {
             label: "Password",
             name: "password",
             type: 'password',
+        },
+        {
+            label: "Project Name",
+            name: "projectName",
+            type: 'text',
         }
     ]
 }
