@@ -23,12 +23,8 @@ function SignIn() {
                         <label for='text'>Project name</label>
                         <input name='text' type='text' />
                     </div>
-                    <select id="options">
-                        <option value="Developer">Developer</option>
-                        <option value="Owner">Owner</option>
-                    </select>
                     <br />
-                    <button>Sign in</button>
+                    <Link to='/scrumboard'><button>Sign in</button></Link>
                 </form>
                 <p>Don't have an account? <Link to='/signup'>Sign up</Link></p>
                 <p><Link to='/'>Return home</Link></p>
