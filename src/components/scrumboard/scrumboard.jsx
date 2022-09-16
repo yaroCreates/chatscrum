@@ -8,6 +8,7 @@ export class Scrumboard extends Component {
     
   render() {
     console.log('Logged in as', data.fullname)
+    console.log(data)
     return (
       <div className='scrumboard'>
         <nav>

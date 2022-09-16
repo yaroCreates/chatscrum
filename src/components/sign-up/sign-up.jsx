@@ -1,6 +1,6 @@
 import React from 'react'
 import './sign-up.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import content from '../../static/index'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -28,6 +28,8 @@ function SignUp() {
     const onSubmit = (data) => { console.log(data) }
     return (
         <div className='sign-up'>
+
+            <h1 className='logo'>Chatscrum</h1>
             <div className="sign-up-header">
                 <h1>Don't have an account?</h1>
                 <h3>Sign up here!</h3>

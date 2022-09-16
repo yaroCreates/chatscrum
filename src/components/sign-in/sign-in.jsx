@@ -6,6 +6,7 @@ import content from '../../static/index'
 function SignIn() {
     return (
         <div className='sign-in'>
+        <h1 className='logo'>Chatscrum</h1>
             <div className="sign-up-header">
                 <h1>Have an account already?</h1>
                 <h3>Sign in here!</h3>

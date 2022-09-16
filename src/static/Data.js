@@ -1,9 +1,8 @@
-const data = [
-    {
-        fullname: 'Onuh James',
-        usertype: 'Developer',
-        projectName:'Chatscrum'
-    }
-]
+const data = {
+    fullname: 'Onuh James',
+    usertype: 'Developer',
+    projectName: 'Chatscrum'
+}
+
 
 export default data
