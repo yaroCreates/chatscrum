@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './scrumboard.css'
 import data from '../../static/Data'
+import Tasks from '../tasks/tasks'
 
 export class Scrumboard extends Component {
 
@@ -54,15 +55,7 @@ export class Scrumboard extends Component {
 
         <p id="info">Hello {data.fullname}! Welcome to your scrumboard</p>
 
-        <div className="container">
-            <div className="weekly-box">
-                <h3>Weekly task</h3>
-                <p id="box">{this.state.tasks}</p>
-            </div>
-            <div className="daily-box">
-                <h3>Daily target</h3>
-            </div>
-        </div>
+        <Tasks />
 
         <div id="modal" className={this.state.isOpen ? "show" : "hidden"}>
             <div className="header">
