@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './tasks.css'
 import { columnsFromBackend } from '../../static/initial-data'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
@@ -52,14 +53,31 @@ export default function Tasks() {
 
                         <Droppable droppableId={id} key={id}>
                             {(provided, snapshot) => (
-                                <div className="weekly-box" {...provided.droppableProps} ref={provided.innerRef}>
+                                <div
+                                    className="weekly-box" 
+                                    {...provided.droppableProps} 
+                                    ref={provided.innerRef}
+                                    style={{
+                                        backgroundColor: snapshot.isDraggingOver ? 'lightblue' : 'lightgrey',
+                                        padding: 4,
+                                        width: 250,
+                                        minHeight: 500
+                                    }}    
+                                >
                                     <h3>{column.name}</h3>
                                     {column.items.map((item, index) => (
                                         <Draggable key={item.id} draggableId={item.id} index={index}>
                                             {(provided, snapshot) => (
-                                                <p className="task" {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                                                <div 
+                                                    className="task" 
+                                                    {...provided.draggableProps} 
+                                                    {...provided.dragHandleProps} 
+                                                    ref={provided.innerRef}
+                                                    
+                                                
+                                                >
                                                     {item.item}
-                                                </p>
+                                                </div>
                                             )}
 
                                         </Draggable>
