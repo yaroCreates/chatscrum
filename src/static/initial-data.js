@@ -8,11 +8,11 @@ export const itemsFromBackend = [
 
  export const columnsFromBackend = {
     'column-1': {
-        name: 'Todo',
+        name: 'Weekly Task',
         items: itemsFromBackend
     },
     'column-2': {
-        name: 'In Progress',
+        name: 'Daily Task',
         items: []
     }
 }
