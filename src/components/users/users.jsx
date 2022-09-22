@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './users.css'
+import axios from 'axios'
 
 export class Users extends Component {
     constructor() {
