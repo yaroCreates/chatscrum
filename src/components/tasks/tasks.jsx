@@ -84,18 +84,17 @@ export default function Tasks({data, deleteTask}) {
                                     }}    
                                 >
                                     <h3>{column.name}</h3>
-                                    {column.items.map((item, index) => (
-                                        <Draggable key={item.id} draggableId={item.id} index={index}>
+                                    {column.items.map(({id, content}, index) => (
+                                        <Draggable key={id} draggableId={id} index={index}>
                                             {(provided, snapshot) => (
                                                 <div 
                                                     className="task" 
                                                     {...provided.draggableProps} 
                                                     {...provided.dragHandleProps} 
                                                     ref={provided.innerRef}
-                                                    
-                                                
+                                                    onClick={() => deleteTask(id)}
                                                 >
-                                                    {item.item}
+                                                    {content}
                                                 </div>
                                             )}
 
