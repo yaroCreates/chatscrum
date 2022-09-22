@@ -3,6 +3,7 @@ import './scrumboard.css'
 import data from '../../static/Data'
 import Tasks from '../tasks/tasks'
 import AddTask from './addTask'
+import Users from '../users/users'
 
 export class Scrumboard extends Component {
 
@@ -55,6 +56,9 @@ export class Scrumboard extends Component {
 
         <Tasks data={this.state.tasks} deleteTask={this.deleteTask}/>
         <AddTask addTask={this.addTask}/>
+        <Users />
+
+        
       </div>
     )
   }
