@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './tasks.css'
-import { columnsFromBackend } from '../../static/initial-data'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+
 
 
 const handleOnDragEnd = (result, columns, setColumns) => {
@@ -41,9 +41,28 @@ const handleOnDragEnd = (result, columns, setColumns) => {
     }
 }
 
-export default function Tasks() {
+export default function Tasks({data, deleteTask}) {
+
+
+    const columnsFromBackend = {
+        'column-1': {
+            name: 'Weekly Task',
+            items: data
+        },
+        'column-2': {
+            name: 'Daily Task',
+            items: []
+        }
+    }
+    
 
     const [columns, setColumns] = useState(columnsFromBackend)
+    console.log('Column after adding data:', columns)
+
+    useEffect(() => {
+        setColumns(columnsFromBackend)
+    }, [data])
+    
     
     return (
         <div className='tasker'>
