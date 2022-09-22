@@ -2,43 +2,41 @@ import React, { Component } from 'react'
 import './scrumboard.css'
 import data from '../../static/Data'
 import Tasks from '../tasks/tasks'
+import AddTask from './addTask'
 
 export class Scrumboard extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             Data: data,
             isOpen: false,
-            tasks: null
+            tasks: []
         }
     }
 
-    openModel = () => {
+    addTask = (task) => {
+        task.id = Math.random().toString(36).slice(2,9)
+        console.log('How task looks with id', task)
+        let tasks = [...this.state.tasks, task]
+        console.log('task before setting state is: ', tasks)
         this.setState({
-            isOpen: true
+            tasks
         })
-    }
-    closeModel = () => {
-        this.setState({
-            isOpen: false
-        })
-    }
-    handleChange = (e) => {
-        this.setState({
-            tasks: e.target.value
-        })
+        console.log(this.state)
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault()
-        this.setState({
-            isOpen: false
+    deleteTask = (id) => {
+        const tasks = this.state.tasks.filter((task) => {
+            return task.id !== id
         })
-    }
+        
+        this.setState({
+            tasks
+        })
 
-    state = data
+    }
     
   render() {
     console.log('Logged in as', data.fullname)
@@ -55,20 +53,8 @@ export class Scrumboard extends Component {
 
         <p id="info">Hello {data.fullname}! Welcome to your scrumboard</p>
 
-        <Tasks />
-
-        <div id="modal" className={this.state.isOpen ? "show" : "hidden"}>
-            <div className="header">
-                <h3>Add new task</h3>
-                <h4 className='close'onClick={() => this.closeModel()}>X</h4>
-            </div>
-
-            <form onSubmit={this.handleSubmit}>
-                <input className='modal-field' type='text'onChange={this.handleChange}/>
-                <button className='modal-button'>Confirm</button>
-            </form>
-        </div>
-        <button className="add" onClick={() => this.openModel()}>Add task</button>
+        <Tasks data={this.state.tasks} deleteTask={this.deleteTask}/>
+        <AddTask addTask={this.addTask}/>
       </div>
     )
   }
