@@ -4,6 +4,7 @@ import data from '../../static/Data'
 import Tasks from '../tasks/tasks'
 import AddTask from './addTask'
 import Users from '../users/users'
+import axios from 'axios'
 
 export class Scrumboard extends Component {
 
@@ -37,6 +38,16 @@ export class Scrumboard extends Component {
             tasks
         })
 
+    }
+
+    componentDidMount() {
+        axios.get("http://liveapi.chatscrum.com/scrum/api/scrumgoals/")
+            .then(res => {
+                console.log(res)
+                this.setState({
+                    tasks: res.data
+                })
+            })
     }
     
   render() {
