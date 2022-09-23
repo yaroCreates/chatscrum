@@ -84,8 +84,9 @@ export default function Tasks({data, deleteTask}) {
                                     }}    
                                 >
                                     <h3>{column.name}</h3>
-                                    {column.items.map(({id, content}, index) => (
-                                        <Draggable key={id} draggableId={id} index={index}>
+                                    <div className='scroll'>
+                                    {column.items.map(({id, name, time_created, scrumgoalhistory_set}, index) => (
+                                        <Draggable key={id.toString()} draggableId={id.toString()} index={index}>
                                             {(provided, snapshot) => (
                                                 <div 
                                                     className="task" 
@@ -94,12 +95,19 @@ export default function Tasks({data, deleteTask}) {
                                                     ref={provided.innerRef}
                                                     onClick={() => deleteTask(id)}
                                                 >
-                                                    {content}
+                                                    {name}
+                                                    <div className='time'>{time_created.slice(0,10)} at {time_created.slice(12,16)}</div>
+                                                    <div className="blue">
+                                                        {scrumgoalhistory_set.map(({id,done_by}) => (
+                                                            <p key={id}>{done_by}</p>
+                                                        ))}
+                                                    </div>
                                                 </div>
                                             )}
 
                                         </Draggable>
                                     ))}
+                                    </div>
                                     {provided.placeholder}
                                 </div>
 
