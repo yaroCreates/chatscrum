@@ -1,0 +1,46 @@
+.main {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+    background-color: #e3e3e3;
+}
+
+.main h4 {
+    cursor: pointer;
+    background-color: #151515;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    color: white;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.user {
+    padding: 10px;
+    border-bottom: 1px solid #808080;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#user-list {
+    transform: translateY(200px);
+    animation: slideUp 200ms linear 1 forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(200px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
