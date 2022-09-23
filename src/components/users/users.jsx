@@ -12,6 +12,18 @@ export class Users extends Component {
         }
     }
 
+    toggleModal = () => {
+        if(this.state.isOpen) {
+            this.setState({
+                isOpen: false
+            })
+        } else {
+            this.setState({
+                isOpen: true
+            })
+        }
+    }
+
     componentDidMount() {
         axios.get('http://liveapi.chatscrum.com/scrum/api/scrumusers/')
             .then(res => this.setState({
@@ -25,8 +37,8 @@ export class Users extends Component {
     console.log(this.state.users)
     return (
       <div className='main'>
-        <h4>Connected Users</h4>
-        <div>
+        <h4 onClick={this.toggleModal}>Connected Users</h4>
+        <div id='user-list' className={this.state.isOpen ? "show" : "hidden"}>
             {this.state.users.map(({nickname, id}) => (
                 <div className="user" key={id}>
                     {nickname}
