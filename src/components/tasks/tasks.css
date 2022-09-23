@@ -2,8 +2,27 @@
     display: flex;
 }
 .task {
-    width: 100%;
+    width: 98%;
     padding: 25px 0 25px 10px;
     border-bottom: 1px solid #223343;
     background-color: #e3e3e3;
+}
+
+.scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.time {
+    margin-top: 1rem;
+    font-size: 12px;
+    font-weight: 600;
+    color: red;
+}
+
+.blue p {
+    margin: 0;
+    color: blue;
+    text-decoration: underline;
+    font-size: 12px;
 }
