@@ -79,7 +79,7 @@ export default function Tasks({data, deleteTask}) {
                                     style={{
                                         backgroundColor: snapshot.isDraggingOver ? 'lightblue' : 'lightgrey',
                                         padding: 4,
-                                        width: 250,
+                                        width: '40%',
                                         minHeight: 500
                                     }}    
                                 >

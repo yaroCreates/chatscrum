@@ -1,3 +1,6 @@
+.container {
+    display: flex;
+}
 .task {
     width: 100%;
     padding: 25px 0 25px 10px;
